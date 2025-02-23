@@ -18,10 +18,8 @@ This counts the words that are in the file
 */
     char character;
     bool whitespace = true;
-
     // We start at the beginning of the file
     fseek(word_file, 0, SEEK_SET);
-
     // Count the words
     while (feof(word_file) == 0) {
         fscanf(word_file, "%c", &character); // Read the character
@@ -33,14 +31,11 @@ This counts the words that are in the file
             whitespace = true; 
         }
     }
-
     // Checks if file is empty
     int fileSize = ftell(word_file);
-
     if (fileSize == 0) {
         word_counter = 0;
     }
-
     return word_counter;
 }
 
